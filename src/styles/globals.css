@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  user-select: none;
+  text-decoration: none;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+  -webkit-tap-highlight-color: transparent;
+}
+
+:root {
+  --bg-primary: #fafafa;
+  --bg-secondary: #ffffff;
+
+  --gray-300: #d4d4d4;
+  --gray-400: #a3a3a3;
+  --gray-500: #737373;
+
+  --body-color: #525252;
+  --heading-color: #171717;
+
+  --line-color: #e5e5e5;
+
+  --shadow-sm: 0 1px 3px 0 #e5e5e5, 0 1px 2px -1px #e5e5e5;
+  --shadow-md: 0 4px 6px -1px #e5e5e5, 0 2px 4px -2px #e5e5e5;
+  --shadow-lg: 0 10px 15px -3px #e5e5e5, 0 4px 6px -4px #e5e5e5;
+}
+
+.dark {
+  --bg-primary: #171717;
+  --bg-secondary: #262626;
+
+  --gray-300: #d4d4d4;
+  --gray-400: #a3a3a3;
+  --gray-500: #737373;
+
+  --body-color: #d4d4d4;
+  --heading-color: #fafafa;
+
+  --line-color: #404040;
+
+  --shadow-sm: 0 1px 3px 0 #121212, 0 1px 2px -1px #121212;
+  --shadow-md: 0 4px 6px -1px #121212, 0 2px 4px -2px #121212;
+  --shadow-lg: 0 20px 25px -5px #121212, 0 8px 10px -6px #000000;
+}
+
+body {
+  color: var(--body-color);
+  transition: background 100ms ease-in-out;
+  background-color: var(--bg-primary);
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}

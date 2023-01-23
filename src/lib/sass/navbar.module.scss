@@ -1,0 +1,29 @@
+.container {
+  @apply border-b border-line bg-secondary dark:bg-primary sticky top-0 z-30;
+}
+
+.navbar {
+  @apply flex items-center justify-between max-w-screen-xl mx-auto p-3;
+}
+
+.logo {
+  @apply flex items-center gap-2;
+  img {
+    @apply w-9 h-9;
+  }
+  h3 {
+    @apply font-black text-heading text-xl text-blue-500 dark:text-blue-400;
+  }
+}
+
+.menu {
+  @apply flex items-center flex-1 justify-center;
+
+  li {
+    @apply px-4 py-2 cursor-pointer text-gray-500 duration-200 font-medium text-sm leading-6 dark:text-gray-400 hover:text-heading dark:hover:text-heading;
+  }
+}
+
+.btn {
+  @apply py-2 px-4 text-sm active:scale-90 font-medium bg-blue-600 rounded-md shadow-md duration-150 leading-6 text-white;
+}

@@ -1,0 +1,28 @@
+.auth {
+  @apply flex flex-col gap-4 max-w-sm mx-auto p-10 shadow-md dark:border border-line rounded-xl dark:bg-primary bg-secondary my-32;
+  animation: fadeIn 0.3s ease-in-out;
+  h1 {
+    @apply font-bold text-2xl text-center mb-6;
+  }
+  a {
+    @apply text-sm -my-1 hover:text-heading duration-100;
+  }
+  button {
+    @apply py-2 px-4 rounded-lg border border-blue-600 shadow-md active:scale-90 duration-100 text-white font-medium bg-blue-600 leading-6;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.90);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.actions {
+  @apply flex items-center justify-between dark:text-gray-400;
+}
