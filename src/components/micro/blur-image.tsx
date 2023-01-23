@@ -22,8 +22,8 @@ export default function BlurImage({ src, alt }: ImageProps) {
                 duration-700 ease-in-out group-hover:opacity-75
                 ${
                   isLoading
-                    ? "scale-110 blur-2xl grayscale"
-                    : "scale-100 blur-0 grayscale-0"
+                    ? "blur-2xl"
+                    : "blur-0"
                 })`}
         onLoadingComplete={() => setLoading(false)}
       />
