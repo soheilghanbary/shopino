@@ -1,14 +1,28 @@
 import { useQuery } from "@tanstack/react-query";
 import { useInfiniteQuery } from "@tanstack/react-query";
-import { getProduct, getProducts } from "../services/products";
+import { getCategories, getProduct, getProducts } from "../services/products";
 
 export const useProducts = () => {
-  const {data, isLoading, isSuccess, hasNextPage, fetchNextPage, isFetchingNextPage} = useInfiniteQuery({
+  const {
+    data,
+    isLoading,
+    isSuccess,
+    hasNextPage,
+    fetchNextPage,
+    isFetchingNextPage,
+  } = useInfiniteQuery({
     queryKey: ["products"],
     queryFn: ({ pageParam = 0 }) => getProducts(pageParam),
-    getNextPageParam: (lastPage, allPages) => allPages.length
+    getNextPageParam: (lastPage, allPages) => allPages.length,
   });
-  return {data, isLoading, isSuccess, hasNextPage, fetchNextPage, isFetchingNextPage};
+  return {
+    data,
+    isLoading,
+    isSuccess,
+    hasNextPage,
+    fetchNextPage,
+    isFetchingNextPage,
+  };
 };
 
 export const useProduct = (id: number) => {
@@ -17,4 +31,11 @@ export const useProduct = (id: number) => {
     queryFn: () => getProduct(id),
   });
   return { data, isLoading };
+};
+
+export const useCategories = () => {
+  return useQuery({
+    queryKey: ["categories"],
+    queryFn: getCategories,
+  });
 };

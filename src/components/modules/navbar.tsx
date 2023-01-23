@@ -28,7 +28,7 @@ const NavButton = () => {
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
       className={styles["btn"]}
     >
-      Create Account
+      Theme
     </button>
   );
 };

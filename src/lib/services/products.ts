@@ -14,3 +14,10 @@ export async function getProduct(id: number) {
   );
   return data;
 }
+
+export async function getCategories() {
+  const { data } = await axios.get(
+    "https://api.escuelajs.co/api/v1/categories"
+  );
+  return data;
+}
