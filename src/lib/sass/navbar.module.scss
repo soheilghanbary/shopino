@@ -17,7 +17,7 @@
 }
 
 .menu {
-  @apply flex items-center flex-1 justify-center;
+  @apply xl:flex lg:flex hidden items-center flex-1 justify-center;
 
   li {
     @apply px-4 py-2 cursor-pointer text-gray-500 duration-200 font-medium text-sm leading-6 dark:text-gray-400 hover:text-heading dark:hover:text-heading;
