@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "next/legacy/image";
 import { useState } from "react";
 
 interface ImageProps {
@@ -17,6 +17,7 @@ export default function BlurImage({ src, alt }: ImageProps) {
         src={src}
         layout="fill"
         loading="lazy"
+        priority={true}
         objectFit="cover"
         className={`rounded-lg shadow-md
                 duration-700 ease-in-out group-hover:opacity-75
