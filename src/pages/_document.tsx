@@ -10,6 +10,8 @@ export default function Document() {
           href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
           rel="stylesheet"
         />
+        <title>Shopini</title>
+        <meta name="description" content="First Shop with Next.js 13 and TailwindCss" />
       </Head>
       <body>
         <Main />

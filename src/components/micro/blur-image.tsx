@@ -6,7 +6,7 @@ interface ImageProps {
   src: string;
 }
 
-export default function BlurImage({ src , alt }: ImageProps) {
+export default function BlurImage({ src, alt }: ImageProps) {
   const [isLoading, setLoading] = useState(true);
 
   return (
@@ -16,6 +16,7 @@ export default function BlurImage({ src , alt }: ImageProps) {
         draggable="false"
         src={src}
         layout="fill"
+        loading="lazy"
         objectFit="cover"
         className={`rounded-lg shadow-md
                 duration-700 ease-in-out group-hover:opacity-75

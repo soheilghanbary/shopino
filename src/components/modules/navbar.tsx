@@ -5,7 +5,7 @@ export default function Navbar() {
     <header className={styles["container"]}>
       <nav className={styles["navbar"]}>
         <div className={styles["logo"]}>
-          <img src="/logo.svg" />
+          <img alt={'logo'} src="/logo.svg" />
           <h3>SOLink</h3>
         </div>
         <ul className={styles["menu"]}>

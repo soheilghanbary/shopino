@@ -46,7 +46,7 @@ export default function ProductList() {
                 <BlurImage alt={product.title} src={product.images[0]} />
                 <div className="flex flex-col mt-4">
                   <h2 className="text-sm">{product.title}</h2>
-                  <h6>${product.price}</h6>
+                  <p>${product.price}</p>
                 </div>
               </div>
             ))
