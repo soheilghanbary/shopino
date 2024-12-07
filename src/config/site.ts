@@ -1,4 +1,4 @@
 export const siteConfig = {
-  title: 'NaaS Stack',
+  title: 'Shopino',
   description: 'The Next.JS SaaS Starter',
 }

@@ -15,11 +15,15 @@
   "dependencies": {
     "@auth/prisma-adapter": "^2.7.4",
     "@prisma/client": "^6.0.1",
+    "@radix-ui/react-dialog": "^1.1.2",
     "@radix-ui/react-label": "^2.1.0",
+    "@radix-ui/react-separator": "^1.1.0",
     "@radix-ui/react-slot": "^1.1.0",
     "@tanstack/react-query": "^5.62.3",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "embla-carousel": "^8.5.1",
+    "embla-carousel-react": "^8.5.1",
     "hono": "^4.6.13",
     "lucide-react": "^0.468.0",
     "next": "^15.0.4",
@@ -30,7 +34,8 @@
     "react-dom": "19.0.0",
     "sonner": "^1.7.0",
     "tailwind-merge": "^2.5.5",
-    "tailwindcss-animate": "^1.0.7"
+    "tailwindcss-animate": "^1.0.7",
+    "use-debounce": "^10.0.4"
   },
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
