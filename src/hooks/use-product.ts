@@ -1,5 +1,5 @@
 import { getProduct, getProducts } from '@/services/product'
-import { useInfiniteQuery, useQuery } from '@tanstack/react-query'
+import { useInfiniteQuery, useMutation, useQuery } from '@tanstack/react-query'
 
 export function useProducts() {
   return useQuery({
@@ -29,6 +29,17 @@ export function useInfiniteProducts() {
         return currentOffset
       }
       return undefined
+    },
+  })
+}
+
+export const useSearchProducts = (filter: string) => {
+  return useMutation({
+    mutationFn: async () => {
+      const res = await fetch(
+        `https://api.escuelajs.co/api/v1/products/?title=${filter}`
+      )
+      return await res.json()
     },
   })
 }

@@ -1,8 +1,6 @@
 import {
   Carousel,
   CarouselMainContainer,
-  CarouselNext,
-  CarouselPrevious,
   CarouselThumbsContainer,
   SliderMainItem,
   SliderThumbItem,
