@@ -1,3 +1,4 @@
+import { cn } from '@/lib/utils'
 import { buttonVariants } from '../ui/button'
 
 export default function Hero() {
@@ -19,7 +20,10 @@ export default function Hero() {
         target="_blank"
         rel="noreferrer"
         href="https://github.com/soheilghanbary/shopino"
-        className={buttonVariants({ variant: 'outline', size: 'icon' })}
+        className={cn(
+          buttonVariants({ variant: 'default', size: 'lg' }),
+          'rounded-full'
+        )}
       >
         GitHub
       </a>

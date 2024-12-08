@@ -1,5 +1,4 @@
 'use client'
-
 import { useProducts } from '@/hooks/use-product'
 import { ArrowRight, ShoppingCartIcon } from 'lucide-react'
 import Link from 'next/link'
@@ -45,7 +44,7 @@ export default () => {
               <img
                 alt={p.title}
                 src={p.images[0]}
-                className="aspect-square rounded-lg"
+                className="aspect-square rounded-lg bg-muted"
               />
               <div>
                 <h2 className="line-clamp-1 font-semibold text-sm">
