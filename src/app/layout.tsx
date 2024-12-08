@@ -1,5 +1,4 @@
 import '@/assets/app.css'
-import Hero from '@/components/Hero'
 import Footer from '@/components/layouts/Footer'
 import Header from '@/components/layouts/Header'
 import Providers from '@/components/providers'
@@ -42,7 +41,7 @@ export default function RootLayout({ children }: PropsWithChildren) {
       <body>
         <Providers>
           <Header />
-          {children}
+          <main className="min-h-screen">{children}</main>
           <Footer />
         </Providers>
       </body>

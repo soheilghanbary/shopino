@@ -1,14 +1,13 @@
-import { ShoppingBag } from 'lucide-react'
 import Link from 'next/link'
-import { ModeToggle } from '../common/mode-toggle'
-import SearchProduct from '../features/SearchProduct'
-import { Button } from '../ui/button'
 import { Store01Icon } from '../common/icons'
+import { ModeToggle } from '../common/mode-toggle'
+import CartModal from '../features/CartModal'
+import SearchProduct from '../features/SearchProduct'
 
 const Logo = () => {
   return (
     <Link href={'/'} className="flex items-center gap-2 font-bold text-primary">
-      <Store01Icon className="text-foreground" />
+      <Store01Icon className="text-primary" />
       Shopino
     </Link>
   )
@@ -21,9 +20,7 @@ export default () => {
         <Logo />
         <div className="flex-1" />
         <SearchProduct />
-        <Button variant={'outline'} size={'icon'}>
-          <ShoppingBag />
-        </Button>
+        <CartModal />
         <ModeToggle />
       </nav>
     </header>

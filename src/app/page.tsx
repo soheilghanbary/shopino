@@ -1,5 +1,5 @@
-import Hero from '@/components/Hero'
 import FeaturedProducts from '@/components/features/FeaturedProducts'
+import Hero from '@/components/features/Hero'
 
 export default function Page() {
   return (

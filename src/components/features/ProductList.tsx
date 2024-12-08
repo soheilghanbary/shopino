@@ -1,5 +1,4 @@
 'use client'
-
 import { useInfiniteProducts } from '@/hooks/use-product'
 import { ShoppingCartIcon } from 'lucide-react'
 import Link from 'next/link'
@@ -53,7 +52,7 @@ export default () => {
 
   return (
     <div className="my-4 space-y-4">
-      <div className="grid grid-cols-4 gap-6">
+      <div className="grid grid-cols-2 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
         {isPending ? (
           <ProductSkeleton />
         ) : (

@@ -10,6 +10,7 @@ import {
 import { useProduct } from '@/hooks/use-product'
 import { ShoppingCart } from 'lucide-react'
 import Link from 'next/link'
+import { SpinnerIcon } from '../common/icons'
 import { Button } from '../ui/button'
 import { Separator } from '../ui/separator'
 import ProductSlider from './ProductSlider'
@@ -50,7 +51,11 @@ export default ({ id }: Props) => {
   const { data, isPending } = useProduct(id)
 
   if (isPending) {
-    return <div>Loading...</div>
+    return (
+      <div className="flex items-center justify-center py-8">
+        <SpinnerIcon className="stroke-primary" />
+      </div>
+    )
   }
 
   return (
@@ -66,7 +71,9 @@ export default ({ id }: Props) => {
             {data.category.name}
           </Link>
           <div>
-            <h1 className="mb-2 font-black text-3xl">{data.title}</h1>
+            <h1 className="mb-2 font-black text-2xl/normal lg:text-3xl/normal">
+              {data.title}
+            </h1>
             <p className="text-foreground/80 text-sm lg:text-base">
               ${data.price}.00
             </p>

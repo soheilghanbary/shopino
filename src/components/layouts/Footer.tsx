@@ -6,19 +6,28 @@ export default () => {
       <div className="container flex items-center justify-between gap-4 p-4">
         <p className="text-muted-foreground text-xs">
           Developed by{' '}
-          <a
-            target="_blank"
-            rel="noreferrer"
-            href="https://soheilghanbary.ir"
-            className="font-medium text-foreground underline decoration-wavy underline-offset-4"
-          >
+          <span className="font-medium text-foreground underline decoration-wavy underline-offset-4">
             Soheil Ghanbary
-          </a>
+          </span>
         </p>
         <div className="flex items-center gap-6">
-          <GithubIcon className="size-4 text-foreground" />
-          <NewTwitterIcon className="size-4 text-foreground" />
-          <AiWebBrowsingIcon className="size-4 text-foreground" />
+          <a
+            href="https://github.com/soheilghanbary/shopino"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <GithubIcon className="size-5 text-foreground" />
+          </a>
+          <a target="_blank" rel="noreferrer" href="https://x.com/soheil_prog">
+            <NewTwitterIcon className="size-5 text-foreground" />
+          </a>
+          <a
+            href="https://soheilghanbary.ir/en"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <AiWebBrowsingIcon className="size-5 text-foreground" />
+          </a>
         </div>
       </div>
     </footer>
