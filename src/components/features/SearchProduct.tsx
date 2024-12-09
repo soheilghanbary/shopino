@@ -32,9 +32,10 @@ const ProductSkeleton = () =>
 export default () => {
   const [open, setOpen] = useState(false)
   const [query, setQuery] = useQueryState('filter', { defaultValue: '' })
-  const { mutateAsync, isPending, data } = useSearchProducts(query)
+  const { mutateAsync, isPending, data } = useSearchProducts()
   const debounced = useDebouncedCallback(async (value) => {
-    setQuery(value)
+    if (!value) return
+    setQuery(value.trim())
     await mutateAsync(value)
   }, 500)
 

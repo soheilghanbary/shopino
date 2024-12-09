@@ -7,9 +7,11 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from '@/components/ui/breadcrumb'
+import useCartStore from '@/contexts/cart'
 import { useProduct } from '@/hooks/use-product'
 import { ShoppingCart } from 'lucide-react'
 import Link from 'next/link'
+import { toast } from 'sonner'
 import { SpinnerIcon } from '../common/icons'
 import { Button } from '../ui/button'
 import { Separator } from '../ui/separator'
@@ -44,6 +46,27 @@ const ProductBreadcrumb = ({ title }: BreadcrumbItemProps) => {
         </BreadcrumbItem>
       </BreadcrumbList>
     </Breadcrumb>
+  )
+}
+
+const AddToCartButton = (props: {
+  id: string
+  title: string
+  price: number
+  image: string
+}) => {
+  const addItem = useCartStore((state) => state.addItem)
+
+  const handleClick = () => {
+    addItem({ ...props, quantity: 1 })
+    toast.success('Added to cart')
+  }
+
+  return (
+    <Button className="w-fit" onClick={handleClick}>
+      <ShoppingCart />
+      Add to Cart
+    </Button>
   )
 }
 
@@ -85,10 +108,7 @@ export default ({ id }: Props) => {
             </p>
           </div>
           <Separator />
-          <Button className="w-fit">
-            <ShoppingCart />
-            Add to Cart
-          </Button>
+          <AddToCartButton {...data} image={data.images[0]} />
         </div>
       </div>
     </>

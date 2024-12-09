@@ -33,9 +33,9 @@ export function useInfiniteProducts() {
   })
 }
 
-export const useSearchProducts = (filter: string) => {
+export const useSearchProducts = () => {
   return useMutation({
-    mutationFn: async () => {
+    mutationFn: async (filter: string) => {
       const res = await fetch(
         `https://api.escuelajs.co/api/v1/products/?title=${filter}`
       )
