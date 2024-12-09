@@ -8,5 +8,5 @@ export async function getProducts(offset = 0, limit = 8) {
 
 export async function getProduct(id: string) {
   const res = await fetch(`https://api.escuelajs.co/api/v1/products/${id}`)
-  return await res.json()
+  return (await res.json()) as Product
 }

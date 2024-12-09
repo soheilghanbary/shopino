@@ -3,5 +3,13 @@ interface Product {
   title: string
   price: number
   images: string[]
-  category: string
+  description: string
+  category: {
+    id: string
+    name: string
+  }
+}
+
+interface BreadcrumbItemProps {
+  title: string
 }

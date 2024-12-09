@@ -44,7 +44,7 @@ export const useSearchProducts = () => {
 }
 
 export function useProductsByCategory(id: string) {
-  return useQuery({
+  return useQuery<Product[], Error>({
     queryKey: ['productsByCategory', id],
     queryFn: () => getProductsByCategory(id),
   })
