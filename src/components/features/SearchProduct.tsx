@@ -44,10 +44,10 @@ export default () => {
       <DialogTrigger asChild>
         <Button
           variant={'outline'}
-          className="gap-4 font-normal text-muted-foreground backdrop-blur-sm"
+          className="mx-auto max-w-xs flex-1 gap-4 font-normal text-muted-foreground backdrop-blur-sm"
         >
           <SearchIcon />
-          Search any products
+          Search products
         </Button>
       </DialogTrigger>
       <DialogContent>
