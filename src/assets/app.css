@@ -61,7 +61,7 @@
 
 @layer base {
   * {
-    @apply border-border select-none outline-none;
+    @apply border-border select-none outline-none scroll-smooth;
   }
   body {
     @apply bg-background text-foreground;
