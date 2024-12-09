@@ -211,7 +211,7 @@ export const NextjsIcon = (props: SVGProps<SVGSVGElement>) => (
         cy={90}
         r={87}
         fill="black"
-        stroke="white"
+        stroke="black"
         strokeWidth={6}
       />
       <path
