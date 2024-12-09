@@ -1,6 +1,5 @@
 import { getProducts } from '@/services/product'
 import { ArrowRight } from 'lucide-react'
-import Image from 'next/image'
 import Link from 'next/link'
 import { Suspense } from 'react'
 import { Button, buttonVariants } from '../ui/button'
@@ -12,8 +11,7 @@ const Products = async () => {
   return products.map((p) => (
     <Link href={`/products/${p.id}`} key={p.id} className="flex flex-col gap-2">
       <figure className="relative aspect-square">
-        <Image
-          fill
+        <img
           alt={p.title}
           src={p.images[0]}
           draggable={false}

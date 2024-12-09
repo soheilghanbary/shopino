@@ -19,7 +19,7 @@ export function useProduct(id: string) {
 export function useInfiniteProducts() {
   return useInfiniteQuery({
     queryKey: ['products'],
-    queryFn: ({ pageParam = 0 }) => getProducts(pageParam, 8),
+    queryFn: ({ pageParam = 0 }) => getProducts(pageParam, 10),
     initialPageParam: 0,
     getNextPageParam: (lastPage, allPages) => {
       const totalItems = 33
