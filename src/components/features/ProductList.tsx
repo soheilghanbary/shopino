@@ -67,6 +67,7 @@ export default () => {
                   <img
                     alt={p.title}
                     src={p.images[0]}
+                    draggable={false}
                     className="aspect-square rounded-lg"
                   />
                   <div>

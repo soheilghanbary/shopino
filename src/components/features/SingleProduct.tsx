@@ -10,6 +10,7 @@ import {
 import useCartStore from '@/contexts/cart'
 import { useProduct, useProductsByCategory } from '@/hooks/use-product'
 import { MinusIcon, PlusIcon, ShoppingCart, Trash2Icon } from 'lucide-react'
+import Image from 'next/image'
 import Link from 'next/link'
 import { toast } from 'sonner'
 import { SpinnerIcon } from '../common/icons'
@@ -180,19 +181,28 @@ const ProductsByCategory = ({
               key={p.id}
               className="flex flex-col gap-2"
             >
-              <img
-                alt={p.title}
-                src={p.images[0]}
-                className="aspect-square rounded-lg bg-muted"
-              />
+              <figure className="relative aspect-square">
+                <img
+                  alt={p.title}
+                  src={p.images[0]}
+                  draggable={false}
+                  className="size-full rounded-lg bg-muted"
+                />
+              </figure>
               <div>
                 <h2 className="line-clamp-1 font-semibold text-sm">
                   {p.title}
                 </h2>
                 <p className="text-muted-foreground text-sm">${p.price}.00</p>
-                <Button size={'sm'} className="w-full" variant={'outline'}>
-                  Show Details
-                </Button>
+                <div className="mt-2 flex items-center gap-2">
+                  <Button
+                    size={'sm'}
+                    className="w-full flex-1"
+                    variant={'outline'}
+                  >
+                    Show Details
+                  </Button>
+                </div>
               </div>
             </Link>
           ))

@@ -16,6 +16,7 @@ const Products = async () => {
           fill
           alt={p.title}
           src={p.images[0]}
+          draggable={false}
           className="size-full rounded-lg bg-muted"
         />
       </figure>
