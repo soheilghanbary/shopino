@@ -1,12 +1,14 @@
 import { siteConfig } from '@/config/site'
 import { cn } from '@/lib/utils'
+import Image from 'next/image'
 import { buttonVariants } from '../ui/button'
 
 export default function Hero() {
   return (
     <div className="relative flex flex-col items-center justify-center gap-4 px-4 py-20 lg:h-[600px] lg:py-0">
       <div className="-z-10 absolute size-full bg-black/65" />
-      <img
+      <Image
+        fill
         alt="Shopino"
         src="/hero.jpg"
         className="-z-20 absolute size-full object-cover"
