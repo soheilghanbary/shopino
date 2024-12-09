@@ -1,20 +1,12 @@
 'use client'
 import { useInfiniteProducts } from '@/hooks/use-product'
-import Link from 'next/link'
 import { Fragment, useEffect, useRef } from 'react'
-import { Button } from '../ui/button'
 import ProductSkeleton from './ProductSkeleton'
-import ProductImage from './product/ProductImage'
+import Products from './Products'
 
 export default () => {
-  const {
-    data,
-    fetchNextPage,
-    hasNextPage,
-    isFetchingNextPage,
-    status,
-    isPending,
-  } = useInfiniteProducts()
+  const { data, fetchNextPage, hasNextPage, isFetchingNextPage, isPending } =
+    useInfiniteProducts()
 
   const observerRef = useRef<HTMLDivElement | null>(null)
 
@@ -45,32 +37,9 @@ export default () => {
         {isPending ? (
           <ProductSkeleton />
         ) : (
-          data?.pages.map((page, index) => (
+          data?.pages.map((products, index) => (
             <Fragment key={index}>
-              {page.map((p) => (
-                <Link
-                  key={p.id}
-                  href={`/products/${p.id}`}
-                  className="flex flex-col gap-2"
-                >
-                  <ProductImage alt={p.title} image={p.images[0]} />
-                  <div>
-                    <h2 className="line-clamp-1 font-semibold text-sm">
-                      {p.title}
-                    </h2>
-                    <p className="text-muted-foreground text-sm">
-                      ${p.price}.00
-                    </p>
-                    <Button
-                      size={'sm'}
-                      className="mt-2 w-full flex-1"
-                      variant={'outline'}
-                    >
-                      Show Details
-                    </Button>
-                  </div>
-                </Link>
-              ))}
+              <Products products={products} />
             </Fragment>
           ))
         )}

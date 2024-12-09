@@ -2,27 +2,13 @@ import { getProducts } from '@/services/product'
 import { ArrowRight } from 'lucide-react'
 import Link from 'next/link'
 import { Suspense } from 'react'
-import { Button, buttonVariants } from '../ui/button'
+import { buttonVariants } from '../ui/button'
 import ProductSkeleton from './ProductSkeleton'
-import ProductImage from './product/ProductImage'
+import Products from './Products'
 
-const Products = async () => {
+const FeaturedProducts = async () => {
   const products = await getProducts()
-
-  return products.map((p) => (
-    <Link href={`/products/${p.id}`} key={p.id} className="flex flex-col gap-2">
-      <ProductImage alt={p.title} image={p.images[0]} />
-      <div>
-        <h2 className="line-clamp-1 font-semibold text-sm">{p.title}</h2>
-        <p className="text-muted-foreground text-sm">${p.price}.00</p>
-        <div className="mt-2 flex items-center gap-2">
-          <Button size={'sm'} className="w-full flex-1" variant={'outline'}>
-            Show Details
-          </Button>
-        </div>
-      </div>
-    </Link>
-  ))
+  return <Products products={products} />
 }
 
 export default () => {
@@ -40,7 +26,7 @@ export default () => {
       </div>
       <div className="grid grid-cols-2 gap-4 sm:grid-cols-2 md:grid-cols-3 md:gap-6 lg:grid-cols-4 xl:grid-cols-5">
         <Suspense fallback={<ProductSkeleton />}>
-          <Products />
+          <FeaturedProducts />
         </Suspense>
       </div>
     </div>
