@@ -1,6 +1,5 @@
 'use client'
 import { useInfiniteProducts } from '@/hooks/use-product'
-import { ShoppingCartIcon } from 'lucide-react'
 import Link from 'next/link'
 import { Fragment, useEffect, useRef } from 'react'
 import { Button } from '../ui/button'
@@ -62,18 +61,13 @@ export default () => {
                     <p className="text-muted-foreground text-sm">
                       ${p.price}.00
                     </p>
-                    <div className="mt-4 flex items-center gap-2">
-                      <Button
-                        size={'sm'}
-                        className="w-full flex-1"
-                        variant={'outline'}
-                      >
-                        Show Details
-                      </Button>
-                      <Button variant={'secondary'} size={'icon'}>
-                        <ShoppingCartIcon />
-                      </Button>
-                    </div>
+                    <Button
+                      size={'sm'}
+                      className="mt-2 w-full flex-1"
+                      variant={'outline'}
+                    >
+                      Show Details
+                    </Button>
                   </div>
                 </Link>
               ))}
