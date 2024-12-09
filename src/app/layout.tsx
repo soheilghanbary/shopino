@@ -30,7 +30,7 @@ export default function RootLayout({ children }: PropsWithChildren) {
   return (
     <html lang="en" className={font.className} suppressHydrationWarning>
       <head>
-        <link rel="theme-color" href="#2563EB" />
+        <meta name="theme-color" content="#EA580C" />
         <link rel="manifest" href="/manifest.json" />
         <link rel="apple-touch-icon" href="/icon.png" />
         <meta
