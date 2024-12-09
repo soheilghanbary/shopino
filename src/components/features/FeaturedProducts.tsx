@@ -47,9 +47,6 @@ export default () => {
                   >
                     Show Details
                   </Button>
-                  <Button variant={'secondary'} size={'icon'}>
-                    <ShoppingCartIcon />
-                  </Button>
                 </div>
               </div>
             </Link>

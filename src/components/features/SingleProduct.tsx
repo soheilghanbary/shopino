@@ -9,7 +9,13 @@ import {
 } from '@/components/ui/breadcrumb'
 import useCartStore from '@/contexts/cart'
 import { useProduct, useProductsByCategory } from '@/hooks/use-product'
-import { ShoppingCart, ShoppingCartIcon } from 'lucide-react'
+import {
+  MinusIcon,
+  PlusIcon,
+  ShoppingCart,
+  ShoppingCartIcon,
+  Trash2Icon,
+} from 'lucide-react'
 import Link from 'next/link'
 import { toast } from 'sonner'
 import { SpinnerIcon } from '../common/icons'
@@ -56,17 +62,52 @@ const AddToCartButton = (props: {
   price: number
   image: string
 }) => {
-  const addItem = useCartStore((state) => state.addItem)
+  const { items, updateQuantity, removeItem, addItem } = useCartStore(
+    (state) => state
+  )
+
+  const cart = items.find((item) => item.id === props.id)
 
   const handleClick = () => {
     addItem({ ...props, quantity: 1 })
     toast.success('Added to cart')
   }
 
-  return (
+  return cart ? (
+    <div className="flex items-center gap-4">
+      {cart.quantity > 1 ? (
+        <Button
+          size={'icon'}
+          variant={'outline'}
+          className="text-rose-500"
+          onClick={() => updateQuantity(cart.id, cart.quantity - 1)}
+        >
+          <MinusIcon />
+        </Button>
+      ) : (
+        <Button
+          size={'icon'}
+          variant={'outline'}
+          className="text-rose-500"
+          onClick={() => removeItem(cart.id)}
+        >
+          <Trash2Icon />
+        </Button>
+      )}
+      <span className="shrink-0 text-sm">{cart.quantity}</span>
+      <Button
+        size={'icon'}
+        variant={'outline'}
+        className="text-emerald-500"
+        onClick={() => updateQuantity(cart.id, cart.quantity + 1)}
+      >
+        <PlusIcon />
+      </Button>
+    </div>
+  ) : (
     <Button className="w-fit" onClick={handleClick}>
       <ShoppingCart />
-      Add to Cart
+      Added
     </Button>
   )
 }
@@ -112,14 +153,16 @@ export default ({ id }: Props) => {
           <AddToCartButton {...data} image={data.images[0]} />
         </div>
       </div>
-      <ProductsByCategory id={data.category.id} />
+      <ProductsByCategory id={data.category.id} productId={data.id} />
     </>
   )
 }
 
-const ProductsByCategory = ({ id }: { id: string }) => {
+const ProductsByCategory = ({
+  id,
+  productId,
+}: { id: string; productId: string }) => {
   const { data, isPending } = useProductsByCategory(id)
-
   if (isPending) {
     return (
       <div className="flex items-center justify-center py-8">
@@ -127,6 +170,7 @@ const ProductsByCategory = ({ id }: { id: string }) => {
       </div>
     )
   }
+  const products = data.filter((product: any) => product.id !== productId)
   return (
     <section className="my-8 space-y-6">
       <h2 className="text-center font-bold text-lg lg:text-2xl">
@@ -136,7 +180,7 @@ const ProductsByCategory = ({ id }: { id: string }) => {
         {isPending ? (
           <ProductSkeleton />
         ) : (
-          data.map((p) => (
+          products.map((p) => (
             <Link
               href={`/products/${p.id}`}
               key={p.id}
