@@ -9,13 +9,7 @@ import {
 } from '@/components/ui/breadcrumb'
 import useCartStore from '@/contexts/cart'
 import { useProduct, useProductsByCategory } from '@/hooks/use-product'
-import {
-  MinusIcon,
-  PlusIcon,
-  ShoppingCart,
-  ShoppingCartIcon,
-  Trash2Icon,
-} from 'lucide-react'
+import { MinusIcon, PlusIcon, ShoppingCart, Trash2Icon } from 'lucide-react'
 import Link from 'next/link'
 import { toast } from 'sonner'
 import { SpinnerIcon } from '../common/icons'
@@ -196,18 +190,9 @@ const ProductsByCategory = ({
                   {p.title}
                 </h2>
                 <p className="text-muted-foreground text-sm">${p.price}.00</p>
-                <div className="mt-4 flex items-center gap-2">
-                  <Button
-                    size={'sm'}
-                    className="w-full flex-1"
-                    variant={'outline'}
-                  >
-                    Show Details
-                  </Button>
-                  <Button variant={'secondary'} size={'icon'}>
-                    <ShoppingCartIcon />
-                  </Button>
-                </div>
+                <Button size={'sm'} className="mt-4 w-full" variant={'outline'}>
+                  Show Details
+                </Button>
               </div>
             </Link>
           ))
