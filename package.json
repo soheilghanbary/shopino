@@ -1,7 +1,7 @@
 {
-  "name": "naas",
+  "name": "shopino",
   "version": "1.0.0",
-  "description": "The Next.JS SaaS Starter",
+  "description": "The Minimal E-Commerce App",
   "scripts": {
     "dev": "next dev --turbo",
     "build": "next build",

@@ -1,4 +1,5 @@
 export const siteConfig = {
-  title: 'Shopino',
-  description: 'The Next.JS SaaS Starter',
+  name: 'Shopino',
+  title: 'Shopino: The Minimal E-Commerce App',
+  description: 'a minimal e-commerce app built with Next.js and Tailwind CSS.',
 }

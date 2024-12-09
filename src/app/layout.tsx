@@ -15,8 +15,8 @@ const font = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: siteConfig.title,
-    template: `%s - ${siteConfig.title}`,
+    default: siteConfig.name,
+    template: `%s - ${siteConfig.name}`,
   },
   description: siteConfig.description,
   icons: {
