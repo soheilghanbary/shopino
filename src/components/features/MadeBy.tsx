@@ -16,7 +16,7 @@ export default () => {
   return (
     <div className="grid gap-4 pt-12">
       <h2 className="font-bold text-lg lg:text-2xl">Technologies</h2>
-      <div className="grid grid-cols-3 gap-4">
+      <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3">
         <div className="grid gap-2 rounded-xl border p-6 shadow-sm">
           <NextjsIcon className="size-8" />
           <h3 className="font-bold text-lg">Next.JS v15</h3>
