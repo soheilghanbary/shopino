@@ -12,9 +12,9 @@ export default () => {
         </p>
         <div className="flex items-center gap-6">
           <a
-            href="https://github.com/soheilghanbary/shopino"
             target="_blank"
             rel="noreferrer"
+            href="https://github.com/soheilghanbary"
           >
             <GithubIcon className="size-5 text-foreground" />
           </a>
@@ -22,9 +22,9 @@ export default () => {
             <NewTwitterIcon className="size-5 text-foreground" />
           </a>
           <a
-            href="https://soheilghanbary.ir/en"
             target="_blank"
             rel="noreferrer"
+            href="https://soheilghanbary.ir/en"
           >
             <AiWebBrowsingIcon className="size-5 text-foreground" />
           </a>
