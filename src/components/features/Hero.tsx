@@ -9,6 +9,7 @@ export default function Hero() {
       <div className="-z-10 absolute size-full bg-black/65" />
       <Image
         fill
+        priority
         alt="Shopino"
         src="/hero.jpg"
         className="-z-20 absolute size-full object-cover"
