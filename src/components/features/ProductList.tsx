@@ -52,7 +52,7 @@ export default () => {
 
   return (
     <div className="my-4 space-y-4">
-      <div className="grid grid-cols-2 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+      <div className="grid grid-cols-2 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
         {isPending ? (
           <ProductSkeleton />
         ) : (

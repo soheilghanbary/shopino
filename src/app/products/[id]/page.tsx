@@ -49,7 +49,7 @@ export default async ({ params }: { params: { id: string } }) => {
         <h2 className="text-center font-bold text-lg lg:text-2xl">
           More Products
         </h2>
-        <div className="grid grid-cols-2 gap-4 sm:grid-cols-2 md:grid-cols-3 md:gap-6 lg:grid-cols-4">
+        <div className="grid grid-cols-2 gap-4 sm:grid-cols-2 md:grid-cols-3 md:gap-6 lg:grid-cols-4 xl:grid-cols-5">
           <Suspense fallback={<ProductSkeleton />}>
             <ProductsByCategory id={product.category.id} productId={id} />
           </Suspense>
