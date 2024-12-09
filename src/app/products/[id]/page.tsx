@@ -1,3 +1,4 @@
+import ProductSkeleton from '@/components/features/ProductSkeleton'
 import ProductSlider from '@/components/features/ProductSlider'
 import AddToCartButton from '@/components/features/product/AddToCartButton'
 import { ProductBreadcrumb } from '@/components/features/product/ProductBreadcrumb'
@@ -5,6 +6,7 @@ import ProductsByCategory from '@/components/features/product/ProductsByCategory
 import { Separator } from '@/components/ui/separator'
 import { getProduct } from '@/services/product'
 import Link from 'next/link'
+import { Suspense } from 'react'
 
 export const metadata = {
   title: 'Product',
@@ -43,7 +45,16 @@ export default async ({ params }: { params: { id: string } }) => {
           <AddToCartButton {...product} image={product.images[0]} />
         </div>
       </div>
-      <ProductsByCategory id={product.category.id} productId={id} />
+      <section className="my-8 space-y-6">
+        <h2 className="text-center font-bold text-lg lg:text-2xl">
+          More Products
+        </h2>
+        <div className="grid grid-cols-2 gap-4 sm:grid-cols-2 md:grid-cols-3 md:gap-6 lg:grid-cols-4">
+          <Suspense fallback={<ProductSkeleton />}>
+            <ProductsByCategory id={product.category.id} productId={id} />
+          </Suspense>
+        </div>
+      </section>
     </section>
   )
 }

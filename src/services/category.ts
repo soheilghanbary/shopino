@@ -12,5 +12,5 @@ export async function getProductsByCategory(id: string) {
   const res = await fetch(
     `https://api.escuelajs.co/api/v1/categories/${id}/products`
   )
-  return await res.json()
+  return (await res.json()) as Product[]
 }

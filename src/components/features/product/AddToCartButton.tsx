@@ -5,7 +5,7 @@ import { MinusIcon, Trash2Icon, PlusIcon, ShoppingCart } from 'lucide-react'
 import { toast } from 'sonner'
 
 export default (props: {
-  id: string
+  id: number
   title: string
   price: number
   image: string
