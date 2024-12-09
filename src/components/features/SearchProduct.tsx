@@ -118,14 +118,20 @@ export default () => {
     )
 
   return (
-    <Drawer>
+    <Drawer open={open} onOpenChange={setOpen}>
       <DrawerTrigger asChild>{Trigger}</DrawerTrigger>
       <DrawerContent>
         <DrawerHeader>
           <DrawerTitle>Search Products</DrawerTitle>
           <DrawerDescription />
         </DrawerHeader>
-        <div className="px-4">
+        <div className="grid gap-4 px-4">
+          <Input
+            type="text"
+            placeholder="search"
+            defaultValue={query}
+            onChange={(e) => debounced(e.target.value)}
+          />
           {isPending ? (
             <div className="h-60">
               <ProductSkeleton />
