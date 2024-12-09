@@ -1,3 +1,4 @@
+import { getProductsByCategory } from '@/services/category'
 import { getProduct, getProducts } from '@/services/product'
 import { useInfiniteQuery, useMutation, useQuery } from '@tanstack/react-query'
 
@@ -23,8 +24,6 @@ export function useInfiniteProducts() {
     getNextPageParam: (lastPage, allPages) => {
       const totalItems = 33
       const currentOffset = allPages.length * 8
-
-      // Check if we reached the total count
       if (currentOffset < totalItems) {
         return currentOffset
       }
@@ -41,5 +40,12 @@ export const useSearchProducts = () => {
       )
       return await res.json()
     },
+  })
+}
+
+export function useProductsByCategory(id: string) {
+  return useQuery({
+    queryKey: ['productsByCategory', id],
+    queryFn: () => getProductsByCategory(id),
   })
 }

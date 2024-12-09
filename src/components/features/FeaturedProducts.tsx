@@ -3,22 +3,10 @@ import { useProducts } from '@/hooks/use-product'
 import { ArrowRight, ShoppingCartIcon } from 'lucide-react'
 import Link from 'next/link'
 import { Button, buttonVariants } from '../ui/button'
-import { Skeleton } from '../ui/skeleton'
-
-const ProductSkeleton = () => {
-  return Array.from({ length: 12 }).map((_, i) => (
-    <div key={i} className="flex flex-col gap-2">
-      <Skeleton className="aspect-square rounded-lg" />
-      <Skeleton className="h-5 w-2/3" />
-      <Skeleton className="h-5 w-1/3" />
-      <Skeleton className="h-9 w-full" />
-    </div>
-  ))
-}
+import ProductSkeleton from './ProductSkeleton'
 
 export default () => {
   const { data, isPending } = useProducts()
-
   return (
     <div className="my-4 space-y-4">
       <div className="flex items-center justify-between gap-4">

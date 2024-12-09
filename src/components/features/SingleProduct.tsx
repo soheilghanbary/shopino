@@ -8,13 +8,14 @@ import {
   BreadcrumbSeparator,
 } from '@/components/ui/breadcrumb'
 import useCartStore from '@/contexts/cart'
-import { useProduct } from '@/hooks/use-product'
-import { ShoppingCart } from 'lucide-react'
+import { useProduct, useProductsByCategory } from '@/hooks/use-product'
+import { ShoppingCart, ShoppingCartIcon } from 'lucide-react'
 import Link from 'next/link'
 import { toast } from 'sonner'
 import { SpinnerIcon } from '../common/icons'
 import { Button } from '../ui/button'
 import { Separator } from '../ui/separator'
+import ProductSkeleton from './ProductSkeleton'
 import ProductSlider from './ProductSlider'
 
 type Props = {
@@ -111,6 +112,63 @@ export default ({ id }: Props) => {
           <AddToCartButton {...data} image={data.images[0]} />
         </div>
       </div>
+      <ProductsByCategory id={data.category.id} />
     </>
+  )
+}
+
+const ProductsByCategory = ({ id }: { id: string }) => {
+  const { data, isPending } = useProductsByCategory(id)
+
+  if (isPending) {
+    return (
+      <div className="flex items-center justify-center py-8">
+        <SpinnerIcon className="stroke-primary" />
+      </div>
+    )
+  }
+  return (
+    <section className="my-8 space-y-6">
+      <h2 className="text-center font-bold text-lg lg:text-2xl">
+        More Products
+      </h2>
+      <div className="grid grid-cols-2 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+        {isPending ? (
+          <ProductSkeleton />
+        ) : (
+          data.map((p) => (
+            <Link
+              href={`/products/${p.id}`}
+              key={p.id}
+              className="flex flex-col gap-2"
+            >
+              <img
+                alt={p.title}
+                src={p.images[0]}
+                className="aspect-square rounded-lg bg-muted"
+              />
+              <div>
+                <h2 className="line-clamp-1 font-semibold text-sm">
+                  {p.title}
+                </h2>
+                <p className="text-muted-foreground text-sm">${p.price}.00</p>
+                <div className="mt-4 flex items-center gap-2">
+                  <Button
+                    size={'sm'}
+                    className="w-full flex-1"
+                    variant={'outline'}
+                  >
+                    Show Details
+                  </Button>
+                  <Button variant={'secondary'} size={'icon'}>
+                    <ShoppingCartIcon />
+                  </Button>
+                </div>
+              </div>
+            </Link>
+          ))
+        )}
+      </div>
+    </section>
   )
 }
