@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { Suspense } from 'react'
 import { Store01Icon } from '../common/icons'
 import { ModeToggle } from '../common/mode-toggle'
 import CartModal from '../features/CartModal'
@@ -19,7 +20,9 @@ export default () => {
       <nav className="container flex items-center justify-between gap-2 px-4 py-2">
         <Logo />
         <div className="flex-1" />
-        <SearchProduct />
+        <Suspense>
+          <SearchProduct />
+        </Suspense>
         <CartModal />
         <ModeToggle />
       </nav>
