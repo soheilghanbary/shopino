@@ -1,6 +1,7 @@
 import { Button } from '@/components/ui/button'
 import { getProductsByCategory } from '@/services/category'
 import Link from 'next/link'
+import ProductImage from './ProductImage'
 
 type Props = {
   id: string
@@ -13,14 +14,7 @@ export default async ({ id, productId }: Props) => {
 
   return products.map((p) => (
     <Link href={`/products/${p.id}`} key={p.id} className="flex flex-col gap-2">
-      <figure className="relative aspect-square">
-        <img
-          alt={p.title}
-          src={p.images[0]}
-          draggable={false}
-          className="size-full rounded-lg bg-muted"
-        />
-      </figure>
+      <ProductImage alt={p.title} image={p.images[0]} />
       <div>
         <h2 className="line-clamp-1 font-semibold text-sm">{p.title}</h2>
         <p className="text-muted-foreground text-sm">${p.price}.00</p>

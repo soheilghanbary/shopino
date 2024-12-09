@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { Fragment, useEffect, useRef } from 'react'
 import { Button } from '../ui/button'
 import { Skeleton } from '../ui/skeleton'
+import ProductImage from './product/ProductImage'
 
 const ProductSkeleton = () => {
   return Array.from({ length: 12 }).map((_, i) => (
@@ -64,12 +65,7 @@ export default () => {
                   href={`/products/${p.id}`}
                   className="flex flex-col gap-2"
                 >
-                  <img
-                    alt={p.title}
-                    src={p.images[0]}
-                    draggable={false}
-                    className="aspect-square rounded-lg"
-                  />
+                  <ProductImage alt={p.title} image={p.images[0]} />
                   <div>
                     <h2 className="line-clamp-1 font-semibold text-sm">
                       {p.title}
