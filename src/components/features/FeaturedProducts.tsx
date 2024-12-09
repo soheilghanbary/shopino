@@ -22,7 +22,7 @@ const Products = async () => {
       <div>
         <h2 className="line-clamp-1 font-semibold text-sm">{p.title}</h2>
         <p className="text-muted-foreground text-sm">${p.price}.00</p>
-        <div className="mt-4 flex items-center gap-2">
+        <div className="mt-2 flex items-center gap-2">
           <Button size={'sm'} className="w-full flex-1" variant={'outline'}>
             Show Details
           </Button>
@@ -45,7 +45,7 @@ export default () => {
           <ArrowRight />
         </Link>
       </div>
-      <div className="grid grid-cols-2 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+      <div className="grid grid-cols-2 gap-4 sm:grid-cols-2 md:grid-cols-3 md:gap-6 lg:grid-cols-4">
         <Suspense fallback={<ProductSkeleton />}>
           <Products />
         </Suspense>

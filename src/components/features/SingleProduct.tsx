@@ -170,7 +170,7 @@ const ProductsByCategory = ({
       <h2 className="text-center font-bold text-lg lg:text-2xl">
         More Products
       </h2>
-      <div className="grid grid-cols-2 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+      <div className="grid grid-cols-2 gap-4 sm:grid-cols-2 md:grid-cols-3 md:gap-6 lg:grid-cols-4">
         {isPending ? (
           <ProductSkeleton />
         ) : (
@@ -190,7 +190,7 @@ const ProductsByCategory = ({
                   {p.title}
                 </h2>
                 <p className="text-muted-foreground text-sm">${p.price}.00</p>
-                <Button size={'sm'} className="mt-4 w-full" variant={'outline'}>
+                <Button size={'sm'} className="w-full" variant={'outline'}>
                   Show Details
                 </Button>
               </div>

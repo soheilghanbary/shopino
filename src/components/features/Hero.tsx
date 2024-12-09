@@ -4,7 +4,7 @@ import { buttonVariants } from '../ui/button'
 
 export default function Hero() {
   return (
-    <div className="-z-30 relative flex flex-col items-center justify-center gap-4 px-4 py-20 lg:h-[600px] lg:py-0">
+    <div className="relative flex flex-col items-center justify-center gap-4 px-4 py-20 lg:h-[600px] lg:py-0">
       <div className="-z-10 absolute size-full bg-black/65" />
       <img
         alt="hero"
@@ -22,7 +22,7 @@ export default function Hero() {
         rel="noreferrer"
         href="https://github.com/soheilghanbary/shopino"
         className={cn(
-          buttonVariants({ variant: 'secondary', size: 'lg' }),
+          buttonVariants({ variant: 'default', size: 'lg' }),
           'rounded-full'
         )}
       >
