@@ -7,7 +7,9 @@ export const metadata = {
 export default () => {
   return (
     <section className="container p-4">
-      <h1 className="font-black text-2xl">All Products</h1>
+      <h1 className="font-bold text-xl md:font-black md:text-2xl">
+        All Products
+      </h1>
       <ProductList />
     </section>
   )

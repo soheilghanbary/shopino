@@ -5,8 +5,14 @@ import ProductSkeleton from './ProductSkeleton'
 import Products from './Products'
 
 export default () => {
-  const { data, fetchNextPage, hasNextPage, isFetchingNextPage, isPending } =
-    useInfiniteProducts()
+  const {
+    data,
+    fetchNextPage,
+    isFetching,
+    hasNextPage,
+    isFetchingNextPage,
+    isPending,
+  } = useInfiniteProducts()
 
   const observerRef = useRef<HTMLDivElement | null>(null)
 
@@ -33,7 +39,7 @@ export default () => {
 
   return (
     <div className="my-4 space-y-4">
-      <div className="grid grid-cols-2 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+      <div className="grid grid-cols-2 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
         {isPending ? (
           <ProductSkeleton />
         ) : (
@@ -43,7 +49,7 @@ export default () => {
             </Fragment>
           ))
         )}
-        {isFetchingNextPage && <ProductSkeleton />}
+        {isFetching && <ProductSkeleton />}
       </div>
       <div ref={observerRef} style={{ height: '1px' }} />
     </div>

@@ -120,7 +120,7 @@ export default () => {
   return (
     <Drawer open={open} onOpenChange={setOpen}>
       <DrawerTrigger asChild>{Trigger}</DrawerTrigger>
-      <DrawerContent className="min-h-96">
+      <DrawerContent className="min-h-[60%]">
         <DrawerHeader>
           <DrawerTitle>Search Products</DrawerTitle>
           <DrawerDescription />
