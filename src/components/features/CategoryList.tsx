@@ -3,6 +3,7 @@ import { getCategories } from '@/services/category'
 import Link from 'next/link'
 import { Suspense } from 'react'
 import ProductSkeleton from './ProductSkeleton'
+import CategoryListLoader from './CategoryListLoader'
 
 const Categories = async () => {
   const categories = await getCategories()
@@ -29,7 +30,7 @@ export default async () => {
     <section className="my-8 space-y-4">
       <h2 className="font-bold text-lg lg:text-2xl">Categories</h2>
       <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
-        <Suspense fallback={<ProductSkeleton />}>
+        <Suspense fallback={<CategoryListLoader />}>
           <Categories />
         </Suspense>
       </div>
