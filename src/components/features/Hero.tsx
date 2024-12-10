@@ -14,7 +14,7 @@ export default function Hero() {
         src="/hero.jpg"
         className="-z-20 absolute size-full object-cover"
       />
-      <h1 className="text-center font-black text-2xl text-white lg:text-5xl">
+      <h1 className="text-center font-black text-3xl text-white lg:text-5xl">
         {siteConfig.title}
       </h1>
       <p className="text-center text-sm/5 text-white lg:text-lg">
