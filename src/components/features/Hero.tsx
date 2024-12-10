@@ -12,7 +12,7 @@ export default function Hero() {
         priority
         alt="Shopino"
         src="/hero.jpg"
-        className="-z-20 absolute size-full object-cover"
+        className="-z-20 size-full object-cover"
       />
       <h1 className="text-center font-black text-3xl text-white lg:text-5xl">
         {siteConfig.title}

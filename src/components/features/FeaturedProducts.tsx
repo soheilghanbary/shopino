@@ -3,8 +3,7 @@ import { ArrowRight } from 'lucide-react'
 import Link from 'next/link'
 import { Suspense } from 'react'
 import { buttonVariants } from '../ui/button'
-import ProductSkeleton from './ProductSkeleton'
-import Products from './Products'
+import Products, { ProductsLoader } from './Products'
 
 const FeaturedProducts = async () => {
   const products = await getProducts()
@@ -25,7 +24,7 @@ export default () => {
         </Link>
       </div>
       <div className="grid grid-cols-2 gap-4 sm:grid-cols-2 md:grid-cols-3 md:gap-6 lg:grid-cols-4 xl:grid-cols-5">
-        <Suspense fallback={<ProductSkeleton />}>
+        <Suspense fallback={<ProductsLoader />}>
           <FeaturedProducts />
         </Suspense>
       </div>

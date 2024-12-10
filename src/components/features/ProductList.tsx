@@ -1,8 +1,7 @@
 'use client'
 import { useInfiniteProducts } from '@/hooks/use-product'
 import { Fragment, useEffect, useRef } from 'react'
-import ProductSkeleton from './ProductSkeleton'
-import Products from './Products'
+import Products, { ProductsLoader } from './Products'
 
 export default () => {
   const {
@@ -41,7 +40,7 @@ export default () => {
     <div className="my-4 space-y-4">
       <div className="grid grid-cols-2 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
         {isPending ? (
-          <ProductSkeleton />
+          <ProductsLoader />
         ) : (
           data?.pages.map((products, index) => (
             <Fragment key={index}>
@@ -49,7 +48,7 @@ export default () => {
             </Fragment>
           ))
         )}
-        {isFetching && <ProductSkeleton />}
+        {isFetching && <ProductsLoader />}
       </div>
       <div ref={observerRef} style={{ height: '1px' }} />
     </div>
