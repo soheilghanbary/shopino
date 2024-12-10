@@ -1,8 +1,7 @@
 'use client'
 import { Button } from '@/components/ui/button'
 import useCartStore from '@/contexts/cart'
-import { MinusIcon, Trash2Icon, PlusIcon, ShoppingCart } from 'lucide-react'
-import { toast } from 'sonner'
+import { MinusIcon, PlusIcon, ShoppingCart, Trash2Icon } from 'lucide-react'
 
 export default (props: {
   id: number
@@ -13,14 +12,8 @@ export default (props: {
   const { items, updateQuantity, removeItem, addItem } = useCartStore(
     (state) => state
   )
-
   const cart = items.find((item) => item.id === props.id)
-
-  const handleClick = () => {
-    addItem({ ...props, quantity: 1 })
-    toast.success('Added to cart')
-  }
-
+  const handleClick = () => addItem({ ...props, quantity: 1 })
   return cart ? (
     <div className="flex items-center gap-4">
       {cart.quantity > 1 ? (

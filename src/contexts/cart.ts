@@ -1,3 +1,4 @@
+import { toast } from 'sonner'
 import { create } from 'zustand'
 import { createJSONStorage, persist } from 'zustand/middleware'
 
@@ -35,6 +36,8 @@ const useCartStore = create<CartStore>()(
               )
             : [...state.items, item]
 
+          toast.success(`Product ${item.id} Added to Cart`)
+
           return {
             items: updatedItems,
             total: updatedItems.reduce(
@@ -47,6 +50,11 @@ const useCartStore = create<CartStore>()(
       removeItem: (id) =>
         set((state) => {
           const updatedItems = state.items.filter((item) => item.id !== id)
+
+          toast.success(`Product ${id} removed`, {
+            className: '',
+          })
+
           return {
             items: updatedItems,
             total: updatedItems.reduce(
