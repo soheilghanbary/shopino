@@ -12,7 +12,7 @@ const Categories = async () => {
     <Link
       key={c.id}
       href={`/products?category=${c.id}`}
-      className="flex flex-col items-start gap-4 rounded-lg border p-4 shadow-sm ring-primary duration-100 hover:ring-2 active:scale-95 md:flex-row md:items-center md:p-6"
+      className="flex flex-col items-start gap-4 rounded-lg border p-4 shadow-sm ring-primary duration-100 hover:ring-2 active:scale-95 md:flex-row md:items-center"
     >
       <img src={c.image} alt={c.name} className="size-14 rounded-md" />
       <div className="grid gap-1">
