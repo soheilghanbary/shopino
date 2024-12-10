@@ -1,6 +1,9 @@
 export async function getProducts(offset = 0, limit = 10) {
   const res = await fetch(
-    `https://api.escuelajs.co/api/v1/products?offset=${offset}&limit=${limit}`
+    `https://api.escuelajs.co/api/v1/products?offset=${offset}&limit=${limit}`,
+    {
+      cache: 'no-store',
+    }
   )
   if (!res.ok) throw new Error('Failed to fetch products')
   return (await res.json()) as Product[]
