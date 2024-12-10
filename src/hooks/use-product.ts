@@ -22,10 +22,10 @@ export function useInfiniteProducts() {
     queryFn: ({ pageParam = 0 }) => getProducts(pageParam, 10),
     initialPageParam: 0,
     getNextPageParam: (lastPage, allPages) => {
-      if (lastPage.length < 8) {
+      if (lastPage.length < 10) {
         return undefined
       }
-      return allPages.length * 8
+      return allPages.length * 10
     },
   })
 }
