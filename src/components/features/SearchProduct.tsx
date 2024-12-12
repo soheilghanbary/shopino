@@ -23,7 +23,7 @@ import { useSearchProducts } from '@/hooks/use-product'
 import { SearchIcon } from 'lucide-react'
 import Link from 'next/link'
 import { useQueryState } from 'nuqs'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useDebouncedCallback } from 'use-debounce'
 import { Button } from '../ui/button'
 import { Input } from '../ui/input'
@@ -93,6 +93,12 @@ export default () => {
     await mutateAsync(value)
   }, 500)
 
+  useEffect(() => {
+    if (query) {
+      debounced(query)
+    }
+  }, [query])
+
   if (isDesktop)
     return (
       <Dialog open={open} onOpenChange={setOpen}>
@@ -112,8 +118,25 @@ export default () => {
             <div className="h-60">
               <ProductSkeleton />
             </div>
-          ) : (
+          ) : data?.length ? (
             <Products products={data} onClose={() => setOpen(false)} />
+          ) : query ? (
+            <div className="mt-4 flex flex-col items-center gap-4 text-center text-muted-foreground">
+              <SearchIcon className="size-16" />
+              <p className="font-medium">No products found</p>
+              <p className="text-sm">
+                We couldn't find any products matching "
+                <span className="font-semibold">{query}</span>". Try again with
+                a different keyword.
+              </p>
+              <Button variant="outline" onClick={() => setQuery('')}>
+                Clear Search
+              </Button>
+            </div>
+          ) : (
+            <p className="text-muted-foreground text-sm">
+              Start typing to search for products...
+            </p>
           )}
         </DialogContent>
       </Dialog>
