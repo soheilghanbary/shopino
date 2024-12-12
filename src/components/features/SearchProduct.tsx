@@ -97,7 +97,7 @@ export default () => {
     if (query) {
       debounced(query)
     }
-  }, [query])
+  }, [])
 
   if (isDesktop)
     return (
