@@ -56,7 +56,8 @@
       },
       "a11y": {
         "recommended": true,
-        "noSvgWithoutTitle": "off"
+        "noSvgWithoutTitle": "off",
+        "useSemanticElements": "off"
       }
     }
   }

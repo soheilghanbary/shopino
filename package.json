@@ -10,6 +10,8 @@
     "check:lint": "biome check --fix --unsafe"
   },
   "dependencies": {
+    "@hookform/resolvers": "^3.9.1",
+    "@radix-ui/react-checkbox": "^1.1.3",
     "@radix-ui/react-dialog": "^1.1.3",
     "@radix-ui/react-label": "^2.1.1",
     "@radix-ui/react-popover": "^1.1.3",
@@ -19,6 +21,7 @@
     "@tanstack/react-query": "^5.62.7",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "cmdk": "1.0.0",
     "date-fns": "^4.1.0",
     "embla-carousel": "^8.5.1",
     "embla-carousel-react": "^8.5.1",
@@ -29,11 +32,13 @@
     "nuqs": "^2.2.3",
     "react": "19.0.0",
     "react-dom": "19.0.0",
+    "react-hook-form": "^7.54.1",
     "sonner": "^1.7.1",
     "tailwind-merge": "^2.5.5",
     "tailwindcss-animate": "^1.0.7",
     "use-debounce": "^10.0.4",
     "vaul": "^1.1.2",
+    "zod": "^3.24.1",
     "zustand": "^5.0.2"
   },
   "devDependencies": {
