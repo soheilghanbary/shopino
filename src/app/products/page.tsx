@@ -1,4 +1,5 @@
 import ProductList from '@/components/features/ProductList'
+import { Suspense } from 'react'
 
 export const metadata = {
   title: 'Products Page',
@@ -10,7 +11,9 @@ export default () => {
       <h1 className="font-bold text-xl md:font-black md:text-2xl">
         All Products
       </h1>
-      <ProductList />
+      <Suspense>
+        <ProductList />
+      </Suspense>
     </section>
   )
 }
