@@ -2,7 +2,6 @@ import { fromNow } from '@/lib/utils'
 import { getCategories } from '@/services/category'
 import Link from 'next/link'
 import { Suspense } from 'react'
-import ProductSkeleton from './ProductSkeleton'
 import CategoryListLoader from './CategoryListLoader'
 
 const Categories = async () => {

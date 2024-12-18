@@ -2,8 +2,10 @@
 import { useInfiniteProducts } from '@/hooks/use-product'
 import { Fragment, useEffect, useRef } from 'react'
 import Products, { ProductsLoader } from './Products'
+import { useQueryState } from 'nuqs'
 
 export default () => {
+  const [query] = useQueryState('category')
   const {
     data,
     fetchNextPage,
@@ -11,7 +13,7 @@ export default () => {
     hasNextPage,
     isFetchingNextPage,
     isPending,
-  } = useInfiniteProducts()
+  } = useInfiniteProducts(query!)
 
   const observerRef = useRef<HTMLDivElement | null>(null)
 

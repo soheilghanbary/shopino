@@ -16,10 +16,10 @@ export function useProduct(id: string) {
   })
 }
 
-export function useInfiniteProducts() {
+export function useInfiniteProducts(categoryId: string) {
   return useInfiniteQuery({
-    queryKey: ['products'],
-    queryFn: ({ pageParam = 0 }) => getProducts(pageParam, 10),
+    queryKey: ['products', categoryId],
+    queryFn: ({ pageParam = 0 }) => getProducts(pageParam, 10, categoryId),
     initialPageParam: 0,
     getNextPageParam: (lastPage, allPages) => {
       if (lastPage.length < 10) {
