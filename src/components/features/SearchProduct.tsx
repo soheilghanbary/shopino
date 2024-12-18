@@ -43,7 +43,7 @@ const ProductSkeleton = () =>
 const Trigger = (
   <Button
     variant={'outline'}
-    className="mx-auto h-9 max-w-xs flex-1 gap-4 font-normal text-muted-foreground backdrop-blur-sm"
+    className="h-9 max-w-xs flex-1 gap-4 font-normal text-muted-foreground backdrop-blur-sm"
   >
     <SearchIcon />
     Search products
