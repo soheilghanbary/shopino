@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import { Button } from '../ui/button'
 import { Skeleton } from '../ui/skeleton'
 import ProductImage from './product/ProductImage'
 
@@ -13,7 +12,7 @@ export const ProductsLoader = () => {
       <Skeleton className="aspect-square rounded-lg" />
       <Skeleton className="h-3 w-2/3" />
       <Skeleton className="h-3 w-1/3" />
-      <Skeleton className="h-9 w-full" />
+      <Skeleton className="h-8 w-16" />
     </div>
   ))
 }
@@ -25,11 +24,9 @@ export default ({ products }: Props) =>
       <div>
         <h2 className="line-clamp-1 font-semibold text-sm">{p.title}</h2>
         <p className="text-muted-foreground text-sm">${p.price}.00</p>
-        <div className="mt-2 flex items-center gap-2">
-          <Button size={'sm'} className="w-full flex-1" variant={'outline'}>
-            Show Details
-          </Button>
-        </div>
+        <p className="mt-2 w-fit rounded-md bg-muted/65 p-2 font-medium text-xs shadow-sm">
+          {p.category.name}
+        </p>
       </div>
     </Link>
   ))
