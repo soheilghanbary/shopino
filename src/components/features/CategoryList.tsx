@@ -24,7 +24,7 @@ const Categories = async () => {
   ))
 }
 
-export default async () => {
+export default () => {
   return (
     <section className="my-8 space-y-4">
       <h2 className="font-bold text-lg lg:text-2xl">Categories</h2>

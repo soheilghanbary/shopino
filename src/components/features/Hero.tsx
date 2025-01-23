@@ -14,10 +14,10 @@ export default function Hero() {
         src="/hero.jpg"
         className="-z-20 size-full object-cover"
       />
-      <h1 className="text-center font-black text-3xl text-white lg:text-5xl">
+      <h1 className="animate-delay-150 animate-fade-up text-center font-black text-3xl text-white lg:text-5xl">
         {siteConfig.title}
       </h1>
-      <p className="text-center text-sm/5 text-white lg:text-lg">
+      <p className="animate-delay-200 animate-fade-up text-center text-sm/5 text-white lg:text-lg">
         {siteConfig.description}
       </p>
       <a
@@ -26,7 +26,7 @@ export default function Hero() {
         href="https://github.com/soheilghanbary/shopino"
         className={cn(
           buttonVariants({ variant: 'default', size: 'lg' }),
-          'rounded-full'
+          'animate-delay-300 animate-fade-up rounded-full'
         )}
       >
         GitHub

@@ -1,4 +1,4 @@
-import '@/assets/app.css'
+import '@/styles/app.css'
 import Footer from '@/components/layouts/Footer'
 import Header from '@/components/layouts/Header'
 import Providers from '@/components/providers'

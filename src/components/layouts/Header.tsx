@@ -20,8 +20,8 @@ export default async () => {
   const allCategories = await getCategories()
   const categories = allCategories.slice(0, 5)
   return (
-    <header className="sticky top-0 z-10 border-b bg-background">
-      <nav className="container flex items-center justify-between gap-2 px-4 py-2">
+    <header className="sticky top-0 z-50 border-b bg-background">
+      <nav className="container mx-auto flex items-center justify-between gap-2 px-4 py-3">
         <Logo />
         <Navbar categories={categories} />
         <div className="flex flex-1 items-center justify-end gap-2">
